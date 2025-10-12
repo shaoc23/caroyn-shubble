@@ -61,12 +61,30 @@ header {
   z-index: 1000;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-between; /* Ensure the title is on the right and icon on the left */
   gap: 10px;
 }
 
+header .title-container svg {
+  display: block;
+  flex-shrink: 0;
+  justify-content: flex-start; /* Align the icon to the left */
+}
+header .title-container svg {
+  display: none;
+}
+
+header .dropdown-menu {
+  display: none;
+}
 @media (max-width: 1024px) {
   /* mobile mode*/
+  @import url('https://fonts.googleapis.com/css2?family=KoHo:wght@400;500;600;700;800&display=swap');
+
+  :root {
+    --header-color: #578FCA;
+  }
+  
   .big {
     display: none;
   }
@@ -77,6 +95,35 @@ header {
 
   footer {
     border-radius: 20px 20px 0 0;
+  }
+  
+  header {
+    border-bottom-left-radius: 50px;
+    max-height: 60px;
+    justify-content: flex-start; /* Align to the left */
+    align-items: center;
+  }
+  header .title-container {
+    display: flex;
+    align-items: left;
+  }
+  
+  header .title {
+    font-family: 'KoHo', sans-serif;
+    font-weight: 800;
+    font-size: 1.1em;
+  }
+  
+  header .title-container svg {
+    display: block;
+    flex-shrink: 0;
+    justify-content: flex-start; /* Keep the icon on the left */
+  }
+
+  header .dropdown-menu {
+    display: flex;
+    border-radius: 2px;
+
   }
 }
 

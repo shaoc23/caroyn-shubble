@@ -20,9 +20,36 @@ function App() {
   const [selectedStop, setSelectedStop] = useState('all');
   const staging = import.meta.env.VITE_DEPLOY_MODE !== 'production';
   const GIT_REV = import.meta.env.GIT_REV || 'unknown';
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+  
   return (
     <Router>
       <header>
+        <div className="title-container">
+          <button className="menu-button" onClick={toggleMenu}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 20 20"
+            >
+              <path fill="black" d="M1 3v2h18V3zm0 8h18V9H1zm0 6h18v-2H1z" />
+            </svg>
+          </button>
+          
+          {isMenuOpen && (
+            <div className="dropdown-menu">
+              <a href="/">Home</a>
+              <a href="/schedule">Schedule</a>
+              <a href="/routes">Routes</a>
+              <a href="/about">About</a>
+            </div>
+          )}
+        </div>
         <span className='title'>SHUBBLE</span>
         <nav className='big'>
           <ul>
