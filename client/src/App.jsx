@@ -50,7 +50,12 @@ function App() {
             </div>
           )}
         </div>
-        <span className='title'>SHUBBLE</span>
+
+        <div class="logo_and_title" >
+          <span className='title'>SHUBBLE</span>
+          <img src="../client/public/shubble2048.png" alt="logo" width="30" height="20">
+        </div>
+        
         <nav className='big'>
           <ul>
             <li>
