@@ -14,6 +14,7 @@ import MapKitMap from './components/MapKitMap';
 import routeData from './data/routes.json';
 import { useState } from "react";
 import WarningBanner from './components/WarningBanner';
+import Dropdown from './components/Dropdown/Dropdown';
 
 function App() {
   const [selectedRoute, setSelectedRoute] = useState(null);
@@ -29,7 +30,7 @@ function App() {
   return (
     <Router>
       <header>
-        <div className="title-container">
+        {/* <div className="title-container">
           <button className="menu-button" onClick={toggleMenu}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -40,22 +41,32 @@ function App() {
               <path fill="black" d="M1 3v2h18V3zm0 8h18V9H1zm0 6h18v-2H1z" />
             </svg>
           </button>
-          
-          {isMenuOpen && (
-            <div className="dropdown-menu">
-              <a href="/">Home</a>
-              <a href="/schedule">Schedule</a>
-              <a href="/routes">Routes</a>
-              <a href="/about">About</a>
-            </div>
-          )}
+        
         </div>
 
-        <div class="logo_and_title" >
-          <span className='title'>SHUBBLE</span>
-          <img src="../client/public/shubble2048.png" alt="logo" width="30" height="20">
-        </div>
-        
+        <div className="App">
+          <div className="content">
+            <Dropdown
+            buttonText="Dropdown button" content={<p>Hello World!</p>} />
+          </div>
+        </div> */}
+
+        <Dropdown
+          buttonText={
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 20 20"
+            >
+              <path fill="black" d="M1 3v2h18V3zm0 8h18V9H1zm0 6h18v-2H1z" />
+            </svg>
+          }
+          content={<p>Hello World!</p>}
+        />
+
+
+        <span className='title'>SHUBBLE</span>
         <nav className='big'>
           <ul>
             <li>

@@ -121,7 +121,7 @@ header .dropdown-menu {
   }
 
   header .dropdown-menu {
-    display: flex;
+    display: contents;
     border-radius: 2px;
 
   }
