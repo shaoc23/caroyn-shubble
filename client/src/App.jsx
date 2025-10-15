@@ -22,6 +22,8 @@ function App() {
   const staging = import.meta.env.VITE_DEPLOY_MODE !== 'production';
   const GIT_REV = import.meta.env.GIT_REV || 'unknown';
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const items = ['About', 'Live Location', 'Schedule'];
+
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -52,18 +54,27 @@ function App() {
         </div> */}
 
         <Dropdown
-          buttonText={
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="22"
-              height="22"
-              viewBox="0 0 20 20"
-            >
-              <path fill="black" d="M1 3v2h18V3zm0 8h18V9H1zm0 6h18v-2H1z" />
-            </svg>
-          }
-          content={<p>Hello World!</p>}
-        />
+            buttonText={
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                viewBox="0 0 20 20"
+              >
+                <path fill="black" d="M1 3v2h18V3zm0 8h18V9H1zm0 6h18v-2H1z" />
+              </svg>
+            }
+            content={
+              <>
+                {items.map((item) => (
+                  <DropdownItem key={item}>
+                    {`Item ${item}`}
+                  </DropdownItem>
+                ))}
+              </>
+            }
+          />
+
 
 
         <span className='title'>SHUBBLE</span>
