@@ -8,9 +8,11 @@ import "./Dropdown.css";
 const Dropdown = ({buttonText,content}) => {
 
     const [open, setOpen] = useState(false);
-    const toggleDropdown = () => {
-        setOpen((open) => !open)
-    }
+    // const toggleDropdown = () => {
+    //     setOpen((open) => !open)
+    // }
+
+    const [dropdown, setDropdown] = useState(false);
 
     return (
         <div className="dropdown">
