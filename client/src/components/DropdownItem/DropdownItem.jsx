@@ -1,7 +1,7 @@
 import React from "react";
 import "./DropdownItem.css"
 
-const DropdownContent = ({ children, onClick }) => {
+const DropdownItem = ({ children, onClick }) => {
   return (
     <div className="dropdown-item" onClick = 
     {onClick}>
