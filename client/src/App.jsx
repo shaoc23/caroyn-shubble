@@ -15,6 +15,8 @@ import routeData from './data/routes.json';
 import { useState } from "react";
 import WarningBanner from './components/WarningBanner';
 import Dropdown from './components/Dropdown/Dropdown';
+import DropdownItem from './components/DropdownItem/DropdownItem';
+
 
 function App() {
   const [selectedRoute, setSelectedRoute] = useState(null);
@@ -22,7 +24,12 @@ function App() {
   const staging = import.meta.env.VITE_DEPLOY_MODE !== 'production';
   const GIT_REV = import.meta.env.GIT_REV || 'unknown';
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const items = ['About', 'Live Location', 'Schedule'];
+  const items = [
+  { label: 'About', path: '/about' },
+  { label: 'Live Location', path: '/' },
+  { label: 'Full Schedule', path: '/schedule' },
+];
+
 
 
   const toggleMenu = () => {
@@ -32,52 +39,36 @@ function App() {
   return (
     <Router>
       <header>
-        {/* <div className="title-container">
-          <button className="menu-button" onClick={toggleMenu}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="22"
-              height="22"
-              viewBox="0 0 20 20"
-            >
-              <path fill="black" d="M1 3v2h18V3zm0 8h18V9H1zm0 6h18v-2H1z" />
-            </svg>
-          </button>
-        
-        </div>
 
-        <div className="App">
-          <div className="content">
-            <Dropdown
-            buttonText="Dropdown button" content={<p>Hello World!</p>} />
-          </div>
-        </div> */}
-
-        <Dropdown
+        <div className="dropmenu-container">
+          <Dropdown
             buttonText={
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="22"
-                height="22"
+                width="30"
+                height="30"
                 viewBox="0 0 20 20"
               >
                 <path fill="black" d="M1 3v2h18V3zm0 8h18V9H1zm0 6h18v-2H1z" />
               </svg>
             }
             content={
-              <>
-                {items.map((item) => (
-                  <DropdownItem key={item}>
-                    {`Item ${item}`}
-                  </DropdownItem>
-                ))}
-              </>
+             <>
+              {items.map((item) => (
+                <DropdownItem key={item.label}>
+                  <Link to={item.path}>{item.label}</Link>
+                </DropdownItem>
+              ))}
+            </>
             }
           />
+        </div>
+  
+        <div className="title-containers">
+          <span className='title'>SHUBBLE</span>
+        </div>
 
-
-
-        <span className='title'>SHUBBLE</span>
+        
         <nav className='big'>
           <ul>
             <li>
@@ -98,7 +89,11 @@ function App() {
           </ul>
         </nav>
       </header>
-      {staging && <WarningBanner bannerText="This is a staging domain. Please visit our official website!" bannerLink="https://shuttles.rpi.edu" gitRev={GIT_REV} />}
+
+      
+
+
+      {/* {staging && <WarningBanner bannerText="This is a staging domain. Please visit our official website!" bannerLink="https://shuttles.rpi.edu" gitRev={GIT_REV} />} */}
       <div className="App">
         <Routes>
           <Route path='/' element={<LiveLocation />} />
