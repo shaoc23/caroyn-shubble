@@ -41,3 +41,12 @@ button {
    display: flex;
    flex-direction: row;
 }
+
+@media (max-width: 1024px) {
+   .toggle-div {
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: fit-content;
+  }
+}

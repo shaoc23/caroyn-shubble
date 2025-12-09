@@ -100,7 +100,7 @@ export default function Schedule({ selectedRoute, setSelectedRoute, selectedStop
     <div className="p-4">
       <h2>Today's schedule</h2>
       <LoopToggle />
-      <div>
+      {/* <div>
         <label for='weekday-dropdown'>Weekday:</label>
         <select id='weekday-dropdown' className="schedule-dropdown-style" value={selectedDay} onChange={handleDayChange}>
           {
@@ -123,7 +123,7 @@ export default function Schedule({ selectedRoute, setSelectedRoute, selectedStop
             )
           }
         </select>
-      </div>
+      </div> */}
       <div>
         <label for='stop-dropdown'>Stop:</label>
         <select id='stop-dropdown' className="schedule-dropdown-style" value={safeSelectedStop} onChange={(e) => setSelectedStop(e.target.value)}>
