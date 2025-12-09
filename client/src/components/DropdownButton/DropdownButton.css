@@ -1,4 +1,4 @@
-.dropdown-btn{
+/* .dropdown-btn{
     display:flex;
     align-items:center;
     width:fit-content;
@@ -16,6 +16,25 @@
 }
 
 .button-open {
-    border: rgb(147,197,253) 2px solid;
+    border: #578FCA 2px solid;
 
+} */
+ 
+.dropdownbtn {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  margin-top: -20px;
+  margin-left: 20px;
+  padding: 0.15rem;
+  background-color: #578FCA;
+  border: 2px solid transparent;   /* Always has same thickness */
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;          /* Ensures borders don’t change size */
+}
+
+.button-open {
+  border-color: #578FCA;           /* Only the color changes */
 }

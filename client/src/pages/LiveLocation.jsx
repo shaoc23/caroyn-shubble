@@ -9,6 +9,7 @@ import "../styles/LiveLocation.css";
 import routeData from '../data/routes.json';
 import { aggregatedSchedule } from '../data/parseSchedule';
 
+
 export default function LiveLocation() {
 
   const [location, setLocation] = useState(null);
