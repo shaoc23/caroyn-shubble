@@ -32,9 +32,9 @@ function App() {
 
 
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  // const toggleMenu = () => {
+  //   setIsMenuOpen(!isMenuOpen);
+  // };
   
   return (
     <Router>
@@ -126,6 +126,7 @@ function App() {
           </ul>
         </nav>
         <div className='big'>
+          <div class='line'></div>
           <div className='big-footer'>
             <div className='git-copy'>
               <a href='https://github.com/wtg/shubble' target='_blank'>

@@ -64,7 +64,7 @@ export default function LiveLocation() {
         selectedStop={selectedStop}
         setSelectedStop={setSelectedStop}
       />
-      <div className="schedule-table">
+      <div className="schedule-table schedule-embedded">
         <Schedule
           selectedRoute={selectedRoute}
           setSelectedRoute={setSelectedRoute}
